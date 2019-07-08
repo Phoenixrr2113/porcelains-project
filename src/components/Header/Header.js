@@ -19,15 +19,7 @@ const styles = {
 		backgroundSize: '100% 500px',
 		backgroundRepeat: 'no-repeat',
 	},
-	content: {
-		backgroundColor: 'rgba(0,0,0,.1)',
-		border: '1px solid grey',
-		borderRadius: 0,
-		height: 400,
-		position: 'relative',
-		bottom: 40,
-		padding: 0,
-	},
+
 	links: {
 		display: 'flex',
 		justifyContent: 'center',
@@ -68,7 +60,6 @@ const Header = props => {
 				<Button className={classes.btn_styles}>Products</Button>
 				<Button className={classes.btn_styles_etk}>ETK</Button>
 			</div>
-			<Paper elevation='2' className={classes.content} />
 		</>
 	);
 };

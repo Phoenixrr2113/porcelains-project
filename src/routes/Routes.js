@@ -1,38 +1,22 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 // material ui components
-import CssBaseline from '@material-ui/core/CssBaseline';
+
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 
 // custom components
-import Navbar from '../components/Navbar/Navbar';
 import HomePage from '../views/HomePage';
 import AboutPage from '../views/AboutPage';
 import ProductsPage from '../views/ProductsPage';
 import ContactPage from '../views/ContactPage';
 import Auth from '../views/Auth/Auth';
-
-const styles = {
-	root: {
-		height: '100vh',
-		backgroundImage:
-			'url(' +
-			'https://res.cloudinary.com/dlrdfp08e/image/upload/v1562167700/porcelains/white-marble-texture-detailed-structure-of-marble-in-natural-patterned-for-background-and-design_u-l-q105odr0.jpg' +
-			')',
-		backgroundPosition: 'center',
-		backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat',
-	},
-};
+import Layout from '../components/Layout/Layout';
 
 const routes = props => {
-	const { classes } = props;
 	return (
-		<div className={classes.root}>
-			<CssBaseline />
-			<Navbar />
+		<Layout>
 			<Container maxWidth='lg'>
 				<Switch>
 					<Route exact path='/' component={HomePage} />
@@ -42,8 +26,8 @@ const routes = props => {
 					<Route exact path='/auth' component={Auth} />
 				</Switch>
 			</Container>
-		</div>
+		</Layout>
 	);
 };
 
-export default withStyles(styles)(routes);
+export default routes;
